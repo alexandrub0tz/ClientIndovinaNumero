@@ -33,7 +33,7 @@ public class App
                 out.writeBytes(input+'\n');
 
                 risposta = in.readLine();
-
+             
                 switch(risposta){
                     case "1":
                         System.out.println("numero troppo piccolo");
@@ -43,22 +43,25 @@ public class App
                         break;
                     case "3":
                         String tentativi = in.readLine();
-                        System.out.println("Hai indovinato "+ tentativi + " volte");
+                        System.out.println("Hai indovinato dopo "+ tentativi + " volte");
                         break;
                     default:
                         System.out.println("errore"); 
                         break;
                 }
                
-            } while(risposta != "3");
+            } while(!risposta.equals("3"));
 
            
-
+            s.close();
+            tastiera.close();  
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        
         
     }
 }
